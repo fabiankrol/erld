@@ -63,7 +63,7 @@ void handle_rotate_signal(int arg __attribute__((unused))) {
 void log_open() {
 	const char *tmp_log_file_name = log_file_name ? log_file_name : DEFAULT_LOG_FILE;
 	DEBUG_V("Using log file %s", tmp_log_file_name);
-	CHECK_F(log_file_fd = open(tmp_log_file_name, O_WRONLY | O_CREAT | O_APPEND | O_LARGEFILE, 0644), "open(%s)", tmp_log_file_name);
+	CHECK_F(log_file_fd = open(tmp_log_file_name, O_WRONLY | O_CREAT | O_APPEND | O_LARGEFILE, 0664), "open(%s)", tmp_log_file_name);
 }
 
 void rotate_log() {
